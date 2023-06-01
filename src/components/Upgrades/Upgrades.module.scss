@@ -1,0 +1,83 @@
+%center-flex {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upgrades {
+  @extend %center-flex;
+  background: #141413;
+  color: white;
+  height: 100%;
+  width: 25%;
+}
+
+.upgradeClick {
+  padding: 10px 20px;
+  background: #fde3c3;
+  border: none;
+  font-size: 20px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 auto;
+  display: block;
+
+  &:hover{
+    background: #ffc36e;
+  }
+}
+
+.upgradeWorkers{
+  padding: 15px;
+  h2{
+    text-align: center;
+  }
+}
+
+.workersWrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows:1fr 1fr;
+  grid-gap: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.worker {
+  @extend %center-flex;
+  text-align: center;
+  background: #2b2b2b;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  height: 90%;
+  width: 100%;
+  color: white;
+  font-size: 18px;
+
+  p {
+    margin: 5px 0 0;
+  }
+
+  img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 360px;
+    margin-bottom: 10px;
+  }
+
+  &:hover {
+    background: #444444;
+  }
+}
+
+.workerButton{
+  width: 80px;
+  background: none;
+  padding: 0;
+  border: none;
+  margin: 0;
+}
