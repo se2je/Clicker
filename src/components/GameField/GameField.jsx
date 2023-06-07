@@ -12,7 +12,6 @@ const GameField = ({addCount, clickCounter}) => {
         config: {duration: 300},
     })
 
-
     return (
         <div className={s.gameField}>
             <animated.div className={s.moonWrapper} onClick={() => {
@@ -22,12 +21,16 @@ const GameField = ({addCount, clickCounter}) => {
                           style={{
                               scale: x.to({
                                   range: [0, 0.5, 1],
-                                  output: [1, 1.1, 1],
+                                  output: [1, 1.05, 1],
                               }),
                           }}>
-                 <img src={`${clickCounter < 1000 ? '/lvl1.jpg' : '/lvl2.jpg'}`} alt=""/>
+                <img src={`${clickCounter > 10000 ? '/lvl3.jpg' : 
+                    clickCounter > 5000 ?  '/lvl2.jpg' : '/lvl1.jpg'}`} alt=""/>
             </animated.div>
-            <p className={s.timesClicked}>Заработано: {clickCounter}$</p>
+            <p className={s.timesClicked}>Заработано: {clickCounter}$
+                {clickCounter < 0 ? <p>Читайте контракт)))</p> : null}
+            </p>
+
         </div>
     )
 }
